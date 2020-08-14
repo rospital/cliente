@@ -1,0 +1,59 @@
+.user-panel{
+    display: flex;
+    //justify-content: space-between;
+    justify-content: flex-end;
+    width: 180px;
+}
+
+.user{
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: relative; 
+    box-shadow: 0 3px 5px rgba(0,0,0,.4);
+}
+
+.user img{
+    position: absolute;
+    top: -2px;
+    left: -5px;
+}
+
+.user-name{
+    margin-left: 20px;
+}
+
+
+.search{
+    position: relative;
+}
+
+.search .search-icon{
+    position: absolute;
+    font-size: 24px;
+    color: $color-light-3;
+    left: 8px;
+    top: 8px;
+}
+
+.search input[type="text"]{
+    width: 400px;
+    height: 40px;
+    padding: 8px 30px 8px 40px;
+    border-radius: 5px;
+    border: none;
+    color: $color-light-3;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus{
+    background-color: $color-light-1;
+    color: $color-dark-3;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}

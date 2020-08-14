@@ -1,0 +1,29 @@
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-family: "Roboto Condensed";
+}
+
+.alert-info{
+    color: $color-text-info;
+    background-color: $color-bg-info;
+    border-color: $color-border-info;
+}
+.alert-danger{
+    color: $color-text-danger;
+    background-color: $color-bg-danger;
+    border-color: $color-border-danger;
+}
+.alert-warning{
+    color: $color-text-warning;
+    background-color: $color-bg-warning;
+    border-color: $color-border-warning;
+}
+.alert-success{
+    color: $color-text-success;
+    background-color: $color-bg-success;
+    border-color: $color-border-success;
+}

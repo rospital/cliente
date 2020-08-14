@@ -1,0 +1,75 @@
+.history-card{
+    margin-top: 30px;
+    position: relative;
+    flex-basis: 100%;
+    box-shadow: 0 0 5px $color-gray-e;
+    border: 1px solid $color-gray-d;
+    background-color: white;
+    padding: 10px 20px 20px 20px;
+    align-self: flex-start;
+    border-radius: 2%;
+}
+
+.card-date{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: $color-primary-dark !important;
+};
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.card-header--left, .card-header--right{
+    display: flex;
+    flex-basis: 50%;
+}
+
+.card-circle-medium {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    padding: 7px 7px;
+    margin-right: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-family: $font-primary;
+}
+
+.card-circle-medium--fp{
+    background-color: $color-fp;
+}
+.card-circle-medium--dt{
+    background-color: $color-dt;
+}
+.card-circle-medium--ds{
+    background-color: $color-ds;
+}
+.card-circle-medium--ju{
+    background-color: $color-ju;
+}
+.card-circle-medium--gn{
+    background-color: $color-gn;
+}
+.card-circle-medium--ob{
+    background-color: $color-ob;
+}
+
+.card-user{
+    border: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-resumen{
+    font-size: 13px;
+    font-family: $font-secondary;
+    text-align: justify;
+}

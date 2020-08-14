@@ -1,0 +1,79 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+} 
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 62.5%; 
+}
+body {
+    min-height: 100%;
+    font-size: 16px; 
+    font-size: 1.6rem;
+    font-family: $font-primary;
+    background-color: $color-light-1;    
+}
+
+a{
+    text-decoration: none;
+}
+
+label{
+    display: block;
+}
+
+ul{
+    list-style: none;
+}
+
+#form{
+    margin-top: 25px;
+}
+
+.bg-primary-dark{
+    background-color: $color-primary-dark;
+}
+
+.right{
+    text-align: right;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+    -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+    box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+}
+.sombra-dark {
+    -webkit-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+    box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+}
+
+.enlace-m0,
+.enlace {
+    display: block;
+    opacity: .7;
+    color: $color-primary-dark;
+}
+.enlace {
+    margin-top: 2rem;
+}
+
+.bg-light{
+    background-color: $color-light-1;
+}
+
+.right{
+    text-align: right;
+}
+
+.color-white{
+    color: white !important;
+}

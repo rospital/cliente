@@ -1,0 +1,197 @@
+header{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    z-index: 101;
+    display: flex;
+
+    .logo{
+        background-color: $color-dark-3;
+        width: 200px;
+        height: 100%;    
+        display: flex;
+        align-items: center;
+
+        img{
+            margin-left: 50px;
+        }
+    }
+}
+
+.header-content{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0 20px;
+}
+nav{
+    flex-grow: 1;
+    padding: 0 10px;
+    height: 100%;
+}
+
+aside{ 
+    width: 40px;
+    height: 100%;
+    position: fixed;
+    top: 60px;
+    z-index: 90;
+}
+
+aside .menu-panel{
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -160px;
+    background-color: $color-dark-1;
+    z-index: 91;
+    transition: all 300ms;
+}
+
+aside:hover .menu-panel{
+    transform: translateX(160px);
+    cursor: pointer;
+}
+
+aside ul{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 92;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+aside ul li{
+    height: px;
+    display: block;
+    color: $color-light-3;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    transition: all .5s;
+}
+aside ul li.active{
+    background-color: $color-primary;
+    color: white;
+}
+aside ul li:hover{
+    background-color: $color-primary-dark   ;
+    color: white;
+    cursor: pointer;
+}
+aside ul li span{
+    height: 35px;
+    width: 40px;
+    padding-top: 10px;
+    float: left;
+}
+aside ul li a{
+    display: block;
+    float: left;
+    position: absolute;
+    left: -200px;
+    transition: all .5s;
+    height: 35px;
+    width: 160px;
+    padding: 10px;
+    text-align: left;
+}
+
+
+
+
+aside:hover .aside-text{
+    left: 40px;
+    cursor: pointer;
+    color: $color-light-3; 
+}
+
+.a-active,
+aside ul li a:hover{
+    background-color: $color-primary-dark;
+    color: white !important;
+}
+
+nav{
+    flex-grow: 1;
+    height: 100%;
+}
+
+nav > ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 28px;
+    padding: 0 20px;
+    list-style: none;
+}
+
+nav > ul li{
+    padding: 20px 10px 10px 10px;
+    border-bottom: 2px solid transparent;
+    height: 60px;
+    transition: all 500ms;
+}
+
+nav > ul li:hover{
+    background-color: $color-light-1;
+    border-bottom: 2px solid $color-primary;
+    cursor: pointer;
+}
+
+nav > ul li a{
+   text-transform: uppercase;
+   font-family: $font-primary;
+   color: $color-primary-dark;
+}
+
+nav > ul li.active{
+    font-weight: bold;
+    border-bottom: 2px solid $color-primary;
+ }
+
+ footer{
+    background-color: $color-dark-3;
+    color: $color-light-1;
+    min-height: 200px;
+    width: 100%;
+    position: absolute;
+    z-index: 102;
+}
+
+#back{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-dark-1;
+    opacity: .9;
+    z-index: 1000;
+}
+#content{
+    width: 1250px;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top:80px;
+    padding-bottom: 20px;
+}
+
+#container{
+    display: flex;
+    justify-content: space-between;
+    /*align-items: baseline;
+    flex-wrap: wrap;*/
+    flex: auto;
+} 

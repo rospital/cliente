@@ -1,0 +1,122 @@
+.float80, .float70, .float60, .float40, .float30, .float20{
+    padding: 10px;
+    margin: 0 5px;
+    flex-flow: column;
+}
+
+.col70, .col100 {
+    box-shadow: 0 0 5px $color-gray-e;
+    border: 1px solid $color-gray-d;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.col80, .float80{
+    flex-basis: 79%;
+}
+
+.col70, .float70{
+    flex-basis: 66%;
+}
+
+.col60, .float60{
+    flex-basis: 61%;
+}
+
+.col40, .float40{
+    flex-basis: 36%;
+}
+
+.col30, .float30{
+    flex-basis: 26%;
+}
+
+.col20, .float20{
+    flex-basis: 4%;
+}
+
+.col25{
+    flex-basis: 24%;
+}
+
+
+.col100{
+    flex-basis: 100%;
+}
+
+.list,
+.listwrap {
+    display: flex;
+    border-bottom: 1px solid $color-light-2;
+    padding: 8px 6px;
+    min-height: 30px;
+    margin: 8px 0;
+    align-items: center;
+}
+
+.listwrap {
+    flex-wrap: wrap;
+}
+
+.listImpar{
+    background-color: $color-light-1;
+}
+
+.list-active{
+    border-left: 4px solid $color-primary !important;
+    
+}
+
+.list > div,
+.listwrap > div{
+    /*border: solid 1px red;*/
+    padding: 5px 0;
+}
+
+.listfx{
+    display: flex;
+}
+
+
+.list5{
+    flex-basis: 5%;
+}
+
+.list10{
+    flex-basis: 10%;
+}
+
+.list15{
+    flex-basis: 15%;
+}
+
+.list20{
+    flex-basis: 20%;
+}
+
+.list25{
+    flex-basis: 25%;
+}
+
+.list30{
+    flex-basis: 30%;
+}
+
+.list35{
+    flex-basis: 35%;
+}
+
+.list50{
+    flex-basis: 50%;
+}
+.list60{
+    flex-basis: 60%;
+}
+.list80{
+    flex-basis: 80%;
+}
+.list90{
+    flex-basis: 90%;
+}

@@ -1,0 +1,46 @@
+.icons-tabs{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.icon-tab{
+    font-size: 40px;
+    text-align: center;
+    color: $color-gray-e;
+}
+
+.icon-tab-100{
+    flex-basis: 100%;
+}
+.icon-tab-50{
+    flex-basis: 50%;
+}
+.icon-tab-33{
+    flex-basis: 33%;
+}
+.icon-tab-25{
+    flex-basis: 25%;
+}
+.icon-tab-20{
+    flex-basis: 20%;
+}
+
+
+.icon-tab-active{
+    color: $color-dark-2;
+}
+
+.icon-tab:hover {
+    cursor: pointer;
+    color: $color-dark-2;
+}
+
+.icon-big {
+    color: $color-primary;
+    font-size: 30px;
+}
+
+
+.iconitos{
+    margin-right: 20px;
+}

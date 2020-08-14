@@ -1,0 +1,187 @@
+.form-usuario {
+    background-color: $color-dark-1;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-form {
+    padding: 5rem 3rem;
+    max-width: 500px;
+    width: 95%;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.campo-form {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.campo-form:last-of-type {
+    margin: 0;
+  }
+  .campo-form label {
+    flex: 0 0 100px;
+    font-family: $font-primary;
+  }
+  .campo-form input[type="password"],
+  .campo-form input[type="email"], 
+  .campo-form input[type="text"] {
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    flex: 1;
+    font-size: 16px;
+  }
+
+
+  /* Campo form 2 */
+
+.campo-form-2 {
+    margin: 2rem 0;
+    align-items: center;
+}
+
+.campo-form-2:last-of-type {
+    margin: 0;
+}
+
+.campo-form-2 label {
+    font-family: $font-secondary;
+    font-size: 10px;
+    font-weight: $font-weight-normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+
+
+.campo-form-2 input[type="password"],
+.campo-form-2 input[type="email"], 
+.campo-form-2 input[type="text"],
+.campo-form-3 input[type="password"],
+.campo-form-3 input[type="email"], 
+.campo-form-3 input[type="text"],
+.campo-form-2 select,
+.campo-form-3 select
+{
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+.campo-form-3 {
+    margin: 2rem 0;
+    align-items: center;
+    display: flex;
+}
+
+.campo-form-3:last-of-type {
+    margin: 0;
+}
+
+.campo-form-3 label {
+    font-family: $font-secondary;
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+    //letter-spacing: 1.5px;
+    color: $color-primary-dark;
+}
+
+.campo-form-medio{
+    width: 48%;
+    margin-left: 10px;
+}
+
+  /* Fin campo form 2 */
+
+  ::placeholder
+  { /* Internet Explorer 10-11 */
+     color: $color-light-3;
+  }
+
+  /*
+  input[type="text"],
+  select{
+      border: 1px solid $color-light-1;
+    padding: 1rem !important;
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+
+*/
+
+  .textarea-modal{
+      background-color: transparent;
+      width: 600px;
+      min-height: 200px;
+      font-size: 24px;
+      font-family: $font-secondary;
+      margin: 10px;
+      padding: 20px;
+      color: $color-dark-1;
+  }
+
+  
+  .radio {
+    margin-left: 50px;
+  }
+
+  .radiobtn {
+      display: none;
+  }
+  
+  .buttons {
+      margin-left: -40px;
+  }
+
+  .buttons li {
+      display: inline-flex;
+      align-items: baseline;
+  }
+
+  .buttons li label {
+    font-size: 15px;
+      padding-left: 30px;
+      position: relative;
+      left: -25px;
+      color: $color-primary-dark;
+  }
+
+  
+
+  .buttons li label:hover {
+      cursor: pointer;
+  }
+
+  .buttons li span {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      border: 2px solid $color-light-3;
+      width: 18px;
+      height: 18px;
+      background: white;
+  }
+
+  .radiobtn:checked + span::before {
+      content: '';
+      border: 2px solid white;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-color: $color-primary-light;
+  }
+
+  .centrado {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+  }
