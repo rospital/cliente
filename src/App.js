@@ -4,9 +4,11 @@ import Login from './components/auth/Login';
 import NuevaCuenta from './components/auth/NuevaCuenta';
 import Pagina from './components/layout/Pagina';
 
+import AlertaState from './context/alertas/alertaState'
+
 function App() {
 	return (
-		<div className="App">
+		<AlertaState>
 			<Router>
 				<Switch>
 					<Route exact path="/" component={Login} />
@@ -14,7 +16,7 @@ function App() {
 					<Route exact path="/empresa" component={Pagina} />
 				</Switch>
 			</Router>
-		</div>
+		</AlertaState>
 	);
 }
 

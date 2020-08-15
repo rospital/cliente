@@ -2,8 +2,8 @@ import React, { Fragment, useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const NuevaCuenta = () => {
-	const [ user, guardarUser ] = useState({
-		name: '',
+	const [ usuario, guardarUsuario ] = useState({
+		nombre: '',
 		username: '',
 		apodo: '',
 		email: '',
@@ -11,10 +11,10 @@ const NuevaCuenta = () => {
 		confirmar: ''
 	});
 
-	const { name, username, apodo, email, password, confirmar } = user;
+	const { nombre, username, apodo, email, password, confirmar } = user;
 
 	const onChange = (e) => {
-		guardarUser({
+		guardarUsuario({
 			...user,
 			[e.target.name]: e.target.value
 		});
@@ -36,14 +36,14 @@ const NuevaCuenta = () => {
 					<form id="form" onSubmit={onSubmit}>
 						
 						<div className="campo-form">
-							<label htmlFor="name">Nombre</label>
+							<label htmlFor="nombre">Nombre</label>
 							<input
 								type="text"
-								id="name"
-								name="name"
+								id="nombre"
+								name="nombre"
 								placeholder="Tu Nombre"
 								onChange={onChange}
-								value={name}
+								value={nombre}
 							/>
 						</div>
 						<div className="campo-form">
