@@ -1,24 +1,52 @@
-import React, {Fragment, useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Fragment, useState, useContext, useEffect } from 'react'
+import {Link} from 'react-router-dom'
+import AlertaContext from '../../context/alertas/alertaContext'
+import AuthContext from '../../context/autenticacion/authContext'
 
-const Login = () => {
 
-    const [user, guardarUser] = useState({
+
+const Login = (props) => {
+
+	const alertaContext = useContext(AlertaContext)
+	const { alerta, mostrarAlerta } = alertaContext
+
+	const authContext = useContext(AuthContext)
+	const { mensaje, autenticado, iniciarSesion } = authContext
+
+	useEffect(() => {
+		if(autenticado){
+			props.history.push(process.env.REACT_APP_PAGINA_INICIO)
+		}
+	
+		if(mensaje) {
+			mostrarAlerta(mensaje.msg, mensaje.categoria)
+		}
+	}, [mensaje, autenticado, props.history])
+
+    const [usuario, guardarUsuario] = useState({
         username: '',
         password: ''
     })
 
-    const {username, password} = user
+    const {username, password} = usuario
 
     const onChange = e => {
-        guardarUser({
-            ...user,
+        guardarUsuario({
+            ...usuario,
             [e.target.name]: e.target.value
         })    
     }
 
     const onSubmit = e => {
-        e.preventDefault()
+		e.preventDefault()
+		
+		if( username.trim() === ''  ||
+			password.trim() === ''){
+				mostrarAlerta('Todos los campos son obligatorios', 'danger')
+				return
+		}
+
+		iniciarSesion({username, password})
     }
 
 	return (
@@ -28,6 +56,8 @@ const Login = () => {
 					<h1 className="headline4">Iniciar Sesión</h1>
 
 					<form id="form" onSubmit={onSubmit}>
+					{alerta ? <div className={`alert alert-${alerta.categoria}`}>{alerta.msg}</div> : null}
+
 						<div className="campo-form">
 							<label htmlFor="username">Nombre de usuario</label>
 							<input

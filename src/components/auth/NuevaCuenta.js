@@ -1,30 +1,71 @@
-import React, { Fragment, useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import AlertaContext from '../../context/alertas/alertaContext'
+import AuthContext from '../../context/autenticacion/authContext'
 
-const NuevaCuenta = () => {
+const NuevaCuenta = (props) => {
+	const alertaContext = useContext(AlertaContext)
+	const { alerta, mostrarAlerta } = alertaContext
+
+	const authContext = useContext(AuthContext)
+	const { mensaje, autenticado, registrarUsuario } = authContext
+
+	// En el caso de que el usuario se haya autenticado o registrdo o sea un registro duplicado
+
+	useEffect(() => {
+		if(autenticado){
+			props.history.push(process.env.REACT_APP_PAGINA_INICIO)
+		}
+
+		if(mensaje) {
+			mostrarAlerta(mensaje.msg, mensaje.categoria)
+		}
+	}, [mensaje, autenticado, props.history])
+
 	const [ usuario, guardarUsuario ] = useState({
 		nombre: '',
 		username: '',
-		apodo: '',
 		email: '',
 		password: '',
 		confirmar: ''
 	});
 
-	const { nombre, username, apodo, email, password, confirmar } = user;
+	const { nombre, username, email, password, confirmar } = usuario;
 
-	const onChange = (e) => {
+	const onChange = e => {
 		guardarUsuario({
-			...user,
+			...usuario,
 			[e.target.name]: e.target.value
 		});
 	};
 
+	const onSubmit = e => {
+		e.preventDefault();
 
-	const onSubmit = (e) => {
-		e.preventDefault()
+		if( nombre.trim() === '' ||
+			username.trim() === ''  ||
+			email.trim() === ''  ||
+			password.trim() === ''  ||
+			confirmar.trim() === ''){
+				mostrarAlerta('Todos los campos son obligatorios', 'danger')
+				return
+		}
+		if(password.length < 6) {
+			mostrarAlerta('El password debe ser de al menos 6 caracteres', 'danger')
+			return
+		}
 
-		
+		if( password !== confirmar) {
+			mostrarAlerta('Los passwords no son iguales', 'danger')
+			return
+		}
+
+		registrarUsuario({
+			nombre,
+			username,
+			email,
+			password
+		})
 	}
 
 	return (
@@ -34,7 +75,7 @@ const NuevaCuenta = () => {
 					<h1 className="headline4">Crear nueva cuenta</h1>
 
 					<form id="form" onSubmit={onSubmit}>
-						
+						{alerta ? <div className={`alert alert-${alerta.categoria}`}>{alerta.msg}</div> : null}
 						<div className="campo-form">
 							<label htmlFor="nombre">Nombre</label>
 							<input
@@ -55,17 +96,6 @@ const NuevaCuenta = () => {
 								placeholder="Nombre de usuario"
 								onChange={onChange}
 								value={username}
-							/>
-						</div>
-						<div className="campo-form">
-							<label htmlFor="apodo">Apodo</label>
-							<input
-								type="text"
-								id="apodo"
-								name="apodo"
-								placeholder="Como te llaman?"
-								onChange={onChange}
-								value={apodo}
 							/>
 						</div>
 						<div className="campo-form">
